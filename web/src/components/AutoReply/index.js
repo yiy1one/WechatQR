@@ -18,6 +18,7 @@ class AutoReply extends Component {
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.getQR = this.getQR.bind(this)
+    this.delete = this.delete.bind(this)
   }
 
 
@@ -61,7 +62,7 @@ class AutoReply extends Component {
                 renderItem={item => (
                   <List.Item
                     key={item.event}
-                    actions={[<Icon type="delete" onClick={this.delete} />]}
+                    actions={[<div ><Icon type="delete"  /></div>]}
                     extra={<img width={100} alt="logo" src={item.base64} />}
                   >
                     <List.Item.Meta
@@ -96,7 +97,16 @@ class AutoReply extends Component {
   }
 
   delete(){
-    
+    // axios.post('/reply/delete',{
+    //   params:{
+    //     id: id,
+    //   }
+    // }).then(res =>{
+    //   message.info('删除成功')
+    //   this.getList()
+    // })
+
+    console.log(1134)
   }
 
   getList() {

@@ -43,8 +43,6 @@ router.post('/wechat',async (ctx)=>{
       </xml>
     `
     }
-
- 
   ctx.body = replyData
 })
 

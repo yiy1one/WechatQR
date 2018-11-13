@@ -56,4 +56,15 @@ router.get('/list',async (ctx,next) => {
   }
 })
 
+router.post('/delete',async (ctx,next) => {
+  const { id } = ctx.request.body.params
+  let list = await QRModel.remove({_id:id})
+  if(list){
+    ctx.body = {
+      code:0,
+      msg:'删除成功'
+    }
+  }
+})
+
 module.exports = router
